@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>History Timeline</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Journey Through Time</h1>
+    <p>Explore key milestones that shaped our world</p>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline">
+    <div class="timeline-event">
+      <h2>1969</h2>
+      <p>First Man on the Moon</p>
+      <a href="pages/1969.html">Learn More</a>
+    </div>
+
+    <div class="timeline-event">
+      <h2>1989</h2>
+      <p>Birth of the World Wide Web</p>
+      <a href="pages/1989.html">Learn More</a>
+    </div>
+
+    <div class="timeline-event">
+      <h2>2007</h2>
+      <p>Launch of the iPhone</p>
+      <a href="pages/2007.html">Learn More</a>
+    </div>
+
+    <div class="timeline-event">
+      <h2>2020</h2>
+      <p>SpaceX Crew Dragon Launch</p>
+      <a href="pages/2020.html">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Optional footer -->
+  <footer>
+    <p>&copy; 2025 Timeline Project | Designed by You</p>
+  </footer>
+
+  <!-- Animation trigger -->
+  <script>
+    // Animate cards on scroll
+    const events = document.querySelectorAll('.timeline-event');
+    const revealOnScroll = () => {
+      events.forEach(event => {
+        const rect = event.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          event.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>

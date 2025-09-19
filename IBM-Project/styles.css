@@ -1,0 +1,207 @@
+/* =======================
+   Page Background
+======================= */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('./assets/index.jpg'); /* replace with your image path */
+  background-size: cover;       /* cover entire viewport */
+  background-position: center;  /* center image */
+  background-repeat: no-repeat; /* prevent tiling */
+  background-attachment: fixed; /* optional parallax effect */
+  font-family: Arial, sans-serif; /* fallback font */
+}
+.hero {
+  color: rgb(21, 21, 21);
+  text-align: center;
+  background-color: #0088ff;
+  padding: 30px 20px;   /* reduce padding (was bigger by default) */
+  max-width: 900px;     /* optional: restrict width */
+  margin: 20px auto;    /* optional: center it with some spacing */
+  border-radius: 12px;  /* optional: rounded box look */
+}
+
+
+/* =======================
+   Timeline Section
+======================= */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Timeline event card */
+.timeline-event {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.6); /* darker overlay for readability */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  margin: 40px 0;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  transform: translateY(40px);
+  z-index: 1;
+}
+
+/* Connector dot */
+.timeline-event::before {
+  content: "";
+  position: absolute;
+  top: 30px; /* aligns with year heading */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background: #ffd700;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-event.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-event:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Year styling */
+.timeline-event h2 {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  background: #ffd700;
+  color: #1e293b;
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.timeline-event p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #e5e5e5;
+}
+
+/* Button */
+.timeline-event a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.timeline-event a:hover {
+  background: #1d4ed8;
+}
+/* Page content wrapper */
+/* General wrapper for pages */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Page-specific backgrounds */
+/* Moon Page */
+.bg-moon {
+  background: url('assets/moon.webp') no-repeat center center/cover;
+}
+
+/* Web Page */
+.bg-web {
+  background: url('assets/web.jpg') no-repeat center center/cover;
+}
+
+/* iPhone Page */
+.bg-iphone {
+  background: url('assets/iphone.jpeg') no-repeat center center/cover;
+}
+
+/* SpaceX Page */
+.bg-spacex {
+  background: url('assets/spacex.jpg') no-repeat center center/cover;
+}
+
+/* Translucent content box */
+.page-container {
+  max-width: 900px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.page-container h1,
+.page-container h2 {
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.page-container ul {
+  text-align: left;
+  display: inline-block;
+  margin: 20px auto;
+  padding-left: 20px;
+  color: #e5e5e5;
+}
+
+/* Back to Timeline button */
+.page-container nav a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ff7f50, #ff4500); /* vibrant orange gradient */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.page-container nav a:hover {
+  background: linear-gradient(135deg, #ff4500, #e63946);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
